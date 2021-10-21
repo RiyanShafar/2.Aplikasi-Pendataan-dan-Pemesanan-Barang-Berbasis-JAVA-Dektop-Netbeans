@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="730" pageHeight="842" columnWidth="690" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="f5341921-b16d-4802-b322-cb09fca5a148">
+	<property name="ireport.zoom" value="1.0000000000000007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="tgl1" class="java.lang.String"/>
+	<parameter name="tgl2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     datacustomer.`id` AS datacustomer_id,
+     datacustomer.`nama` AS datacustomer_nama,
+     datacustomer.`no_telp` AS datacustomer_no_telp,
+     datacustomer.`fax` AS datacustomer_fax,
+     datacustomer.`tanggal` AS datacustomer_tanggal,
+     datacustomer.`alamat` AS datacustomer_alamat
+FROM
+     `datacustomer` datacustomer
+WHERE
+     datacustomer.tanggal BETWEEN $P{tgl1} AND $P{tgl2}]]>
+	</queryString>
+	<field name="datacustomer_id" class="java.lang.Integer"/>
+	<field name="datacustomer_nama" class="java.lang.String"/>
+	<field name="datacustomer_no_telp" class="java.lang.String"/>
+	<field name="datacustomer_fax" class="java.lang.String"/>
+	<field name="datacustomer_tanggal" class="java.sql.Date"/>
+	<field name="datacustomer_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="155" splitType="Stretch">
+			<staticText>
+				<reportElement x="269" y="16" width="174" height="20" uuid="8b4af31c-2eb4-41f0-bfe4-1670e759977a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT KARYA BAHANA BERLIAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="40" width="367" height="20" uuid="db473291-7217-4421-8fea-51e7ce63d1ff"/>
+				<text><![CDATA[JL. KARYA LOGAM KP. LEGON DS. JATIMULYA, TAMBUN, 17512 Bekasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="62" width="168" height="20" uuid="8c4497e6-6143-465c-a365-7851ffc82592"/>
+				<text><![CDATA[E-mail : actkbukbb@yahoo.co.id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="84" width="100" height="20" uuid="0e3d63cd-2ce2-4b8a-9395-2a2ecb8c5abe"/>
+				<text><![CDATA[Telp : 021-8806866]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="110" width="690" height="1" uuid="62aa4609-4209-4afd-9d38-da37b543a61e"/>
+			</line>
+			<staticText>
+				<reportElement x="290" y="125" width="110" height="20" uuid="9d525ad3-e449-4f99-b9fe-27f86caf0acc"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA CUSTOMER]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="0" width="163" height="104" uuid="5581595e-c0f2-4bce-8384-9cbfd22d430b"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="8" width="100" height="20" uuid="14b8c7ce-9b64-40da-9b7e-deb855498c94"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="8" width="114" height="20" uuid="116ce19f-6540-4b20-b8b3-2863a7e0bde3"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="8" width="100" height="20" uuid="be510288-30dc-4158-99fc-daa817630d11"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="8" width="100" height="20" uuid="ca6cfb6a-05b4-471b-86c0-156b3c37e1a4"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="8" width="100" height="20" uuid="0906cb20-8234-4c25-827e-457165651e5c"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="578" y="8" width="100" height="20" uuid="507404b1-254a-4e5a-a762-bb43492f4e99"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="4" width="663" height="1" uuid="6b39c21e-f788-4613-9bd7-a3005df70db9"/>
+			</line>
+			<line>
+				<reportElement x="17" y="31" width="663" height="1" uuid="fedc0fee-724b-4840-8940-566376164003"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="8" width="100" height="20" uuid="debf9312-e23a-4d72-8613-7bee241cf286"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="8" width="111" height="20" uuid="9324e8bf-ee19-41f2-bb83-2c437bf8ddbb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="8" width="100" height="20" uuid="e176e766-8686-45cd-82be-0ad9d2631aa3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_no_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="8" width="100" height="20" uuid="894fc34b-aac9-4950-bd8c-90cb08fd0883"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_fax}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="8" width="100" height="20" uuid="377c5e83-1b45-4a14-a21a-8c8385e1139f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="578" y="8" width="100" height="20" uuid="f9b64fd3-ecec-4842-b1af-c69f74657593"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{datacustomer_alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="15" y="30" width="663" height="1" uuid="85ab326f-9381-4ad3-b657-358acad1fe8c"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement x="512" y="33" width="33" height="20" uuid="b2c7d9d3-21fa-4b12-8bc9-916423dc9bf9"/>
+				<text><![CDATA[Bekasi,]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="547" y="33" width="113" height="20" uuid="d5ede357-45c7-4a78-8b8b-055c5968204b"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="554" y="59" width="55" height="20" uuid="dca496ff-10da-4935-8296-c078e4ba7737"/>
+				<text><![CDATA[DIREKTUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="515" y="123" width="138" height="20" uuid="e692da75-9113-4319-ba71-1f99764f5560"/>
+				<text><![CDATA[(..........................................)]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="820" pageHeight="595" orientation="Landscape" columnWidth="780" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="7c34794d-9f5e-4799-ae68-c4e4e726f779">
+	<property name="ireport.zoom" value="0.9075000000000003"/>
+	<property name="ireport.x" value="26"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="tgl1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     datapengiriman.`nopb` AS datapengiriman_nopb,
+     datapengiriman.`tanggal` AS datapengiriman_tanggal,
+     datapengiriman.`idcus` AS datapengiriman_idcus,
+     datapengiriman.`nama_customer` AS datapengiriman_nama_customer,
+     datapengiriman.`id_beli` AS datapengiriman_id_beli,
+     datapengiriman.`kode_barang` AS datapengiriman_kode_barang,
+     datapengiriman.`nama_barang` AS datapengiriman_nama_barang,
+     datapengiriman.`harga` AS datapengiriman_harga,
+     datapengiriman.`jumlah` AS datapengiriman_jumlah,
+     datapengiriman.`harga_pengiriman` AS datapengiriman_harga_pengiriman,
+     datapengiriman.`total` AS datapengiriman_total,
+     datapengiriman.`bayar` AS datapengiriman_bayar,
+     datapengiriman.`kembalian` AS datapengiriman_kembalian
+FROM
+     `datapengiriman` datapengiriman
+WHERE
+     datapengiriman.tanggal BETWEEN $P{tgl1} AND $P{tgl2}]]>
+	</queryString>
+	<field name="datapengiriman_nopb" class="java.lang.Integer"/>
+	<field name="datapengiriman_tanggal" class="java.sql.Date"/>
+	<field name="datapengiriman_idcus" class="java.lang.Integer"/>
+	<field name="datapengiriman_nama_customer" class="java.lang.String"/>
+	<field name="datapengiriman_id_beli" class="java.lang.Integer"/>
+	<field name="datapengiriman_kode_barang" class="java.lang.Integer"/>
+	<field name="datapengiriman_nama_barang" class="java.lang.String"/>
+	<field name="datapengiriman_harga" class="java.lang.Integer"/>
+	<field name="datapengiriman_jumlah" class="java.lang.Integer"/>
+	<field name="datapengiriman_harga_pengiriman" class="java.lang.Integer"/>
+	<field name="datapengiriman_total" class="java.lang.Integer"/>
+	<field name="datapengiriman_bayar" class="java.lang.Integer"/>
+	<field name="datapengiriman_kembalian" class="java.lang.Integer"/>
+	<variable name="datapengiriman_total_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{datapengiriman_total}]]></variableExpression>
+	</variable>
+	<variable name="datapengiriman_total_2" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{datapengiriman_total}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="277" y="52" width="432" height="20" uuid="1598bc01-87d6-42e0-ab81-b83eb68d734a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JL. KARYA LOGAM KP. LEGON DS. JATIMULYA, TAMBUN, 17512 Bekasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="28" width="239" height="20" uuid="21603092-824c-4ed2-8028-77cfbaaf735c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT KARYA BAHANA BERLIAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="74" width="233" height="20" uuid="39bb350d-9fbd-4dd2-89de-80fc5bcc0529"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[E-mail : actkbukbb@yahoo.co.id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="96" width="165" height="20" uuid="612af356-1324-4b1a-a9a9-d48c4e8a33de"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Telp : 021-8806866]]></text>
+			</staticText>
+			<image>
+				<reportElement x="56" y="6" width="200" height="130" uuid="72d5ac4d-596b-405a-b6b8-a7b419f4e187"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="143" width="780" height="1" uuid="fa8c94ec-2e11-450a-a12d-298e9e68a81f"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="0" width="100" height="20" uuid="c5ddfee6-57ee-4b99-9d71-13268acb4550"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOPB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="100" height="20" uuid="7d4d07ec-b1a8-40c3-b47f-9690fce048f9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="0" width="100" height="20" uuid="e0f90e8c-55bf-493d-b7c0-ef88cca31b58"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="0" width="100" height="20" uuid="8a54a0aa-a0b1-4021-9ec7-1e2296903c5d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="0" width="111" height="20" uuid="7b27a03e-368d-4dca-bddc-1cf803827e98"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA CUSTOMER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="16" y="0" width="100" height="20" uuid="23935fc4-d701-488c-a18b-c924dae378fc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datapengiriman_nopb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="0" width="100" height="20" uuid="eb14a776-1b75-4d8a-b13e-67f02a7a1ef5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datapengiriman_idcus}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="645" y="0" width="100" height="20" uuid="4264e8fb-94b3-4fac-8128-d6160e6086d1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datapengiriman_total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="141" y="0" width="100" height="20" uuid="35d7bce1-d60a-46bc-ba82-04125346f44e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMMM yyyy",new java.util.Locale("id")).format($F{datapengiriman_tanggal})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="111" height="20" uuid="db670d42-2561-468e-b248-58798c55cd62"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datapengiriman_nama_customer}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="184" splitType="Stretch">
+			<staticText>
+				<reportElement x="626" y="12" width="19" height="20" uuid="14164ef7-077b-4c22-ba8e-73b3a5e8bd6a"/>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="12" width="136" height="20" uuid="2e380d07-b6a5-4f57-bb75-e742d1859eb3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL KESELURUHAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="607" y="12" width="19" height="20" uuid="ff9b7f0a-7ec6-4d97-8a8d-033575eef0ca"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="566" y="57" width="48" height="20" uuid="ddc68e35-e061-49d4-a405-eb1e68dc9655"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Bekasi,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="579" y="80" width="117" height="20" uuid="495d3c94-b9ba-4461-8f66-fbfb42132b76"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DIREKTUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="555" y="148" width="178" height="20" uuid="5de9f335-7c3e-484a-ad80-8f63f657b97e"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(..........................................)]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="601" y="57" width="144" height="20" uuid="8a8901a9-cd8e-4934-9435-f302572bc54c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="645" y="12" width="100" height="20" uuid="c085573e-7ebe-4bc5-87e7-3c899440d1d5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{datapengiriman_total_2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="5" width="780" height="1" uuid="7ecf649b-2548-4956-9e33-10a5d1f24641"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
